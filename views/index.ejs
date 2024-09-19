@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD OPERATION</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <form action="/create" method="post">
+      <input name="title" type="text" placeholder="Task title goes here" />
+      <textarea
+        name="details"
+        placeholder="Task details goes here"
+        id="taskDetails"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="taskContainer">
+      <% if(files.length > 0){ %> <% files.forEach((elm)=>{ %>
+      <div class="task">
+        <h3><%= elm %></h3>
+        <a href="/files/<%= elm %>">Read More</a>
+        <a href="/edit/<%= elm %>">Edit Title</a>
+      </div>
+      <% }) %> <% } else{ %>
+      <p>No files yet</p>
+      <% } %>
+    </div>
+  </body>
+</html>

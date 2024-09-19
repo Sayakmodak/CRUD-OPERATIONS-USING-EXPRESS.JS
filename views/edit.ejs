@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/edit" method="post">
+      <input type="text" name="old_title"
+       value=<% if(old_name.endsWith("/")){ %>
+            <%= old_name.slice(0, -1) %>
+            <% } else { %>
+            <%= old_name %>
+        <% } %>
+       />
+      <input type="text" name="new_title" />
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>
